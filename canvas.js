@@ -1,4 +1,12 @@
 window.addEventListener("load", () => {
+  // for touchable device
+  if ("ontouchstart" in document.documentElement) {
+    alert("handy");
+    document.write("your device is a touch screen device.");
+  } else {
+    document.write("your device is NOT a touch device");
+  }
+
   // keep track of pen history
   let drawHistory = [];
   let index = -1;
@@ -58,11 +66,6 @@ window.addEventListener("load", () => {
   canvas.addEventListener("mousemove", draw, false);
   canvas.addEventListener("mouseup", finishPosition);
   canvas.addEventListener("mouseout", finishPosition);
-
-  // for touch screen devices
-  canvas.addEventListener("touchstart", startPosition, false);
-  canvas.addEventListener("touchend", finishPosition, false);
-  canvas.addEventListener("touchmove", draw, false);
 
   // event lister methods
   let painting = false;
