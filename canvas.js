@@ -1,10 +1,10 @@
 window.addEventListener("load", () => {
   // for touchable device
   if ("ontouchstart" in document.documentElement) {
-    alert("handy");
-    document.write("your device is a touch screen device.");
-  } else {
-    document.write("your device is NOT a touch device");
+    document.write(
+      "Your device is a touch screen device. Drawable is supported for Non-touchable devices only"
+    );
+    return;
   }
 
   // keep track of pen history
